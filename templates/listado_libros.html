@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Listado de libros</title>
+{% endblock title %}
+
+{% block texto_header %}
+<h1>
+    Listado de libros
+</h1>
+{% endblock texto_header %}
+
+{% block despues_del_header %}
+<p>
+    <a href={% url 'crear_libro' %}>Crear Perro</a>
+</p>
+
+<p>
+    <form action={% url 'listado_libros' %}>
+        {{form}}
+        <button>Buscar</button>
+    </form>
+</p>
+
+<p>
+    {% if listado_libros %}
+    <ul>
+        {% for libro in listado_libros %}
+        <li>{{libro}}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    No se encontraron datos.
+    {% endif %}
+</p>
+{% endblock despues_del_header %}
