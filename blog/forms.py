@@ -6,4 +6,4 @@ class FormLibro(forms.Form):
     fecha_de_publicación = forms.DateField(required=False)
     
 class busquedaLibro(forms.Form):
-    nombre= forms.CharField(max_length=30, required=False) 
+    titulo= forms.CharField(max_length=30, required=False) 

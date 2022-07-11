@@ -12,6 +12,9 @@
 
 {% block despues_del_header %}
 <p>
+    <a href={% url 'listado_libros' %}>Volver</a>
+</p>
+<p>
     <form action={% url 'crear_libro' %} method="post">
         {% csrf_token %}
         <table>

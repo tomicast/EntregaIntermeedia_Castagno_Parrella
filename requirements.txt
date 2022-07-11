@@ -2,3 +2,5 @@ asgiref==3.5.2
 Django==4.0.6
 sqlparse==0.4.2
 tzdata==2022.1
+
+#Si clono el repo tengo que instalar todo esto con el comando pip install -r requirements.txt

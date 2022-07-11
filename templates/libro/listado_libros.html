@@ -12,7 +12,7 @@
 
 {% block despues_del_header %}
 <p>
-    <a href={% url 'crear_libro' %}>Crear Perro</a>
+    <a href={% url 'crear_libro' %}>Crear Libro</a>
 </p>
 
 <p>
@@ -26,7 +26,11 @@
     {% if listado_libros %}
     <ul>
         {% for libro in listado_libros %}
-        <li>{{libro}}</li>
+        <li>{{libro}}
+        <a href={% url 'editar_libro' libro.id %}>Editar</a>
+        <a href={% url 'mostrar_libro' libro.id %}>Mostrar</a>
+        <a href={% url 'eliminar_libro' libro.id %}>Eliminar</a>
+        </li>
         {% endfor %}
     </ul>
     {% else %}

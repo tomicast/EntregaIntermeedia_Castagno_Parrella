@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Listado de Comics</title>
+{% endblock title %}
+
+{% block texto_header %}
+<h1>
+    Listado de Comics
+</h1>
+{% endblock texto_header %}
+
+{% block despues_del_header %}
+<p>
+    <a href={% url 'crear_comic' %}>Crear Comic</a>
+</p>
+
+<p>
+    <form action={% url 'listado_comics' %}>
+        {{form}}
+        <button>Buscar</button>
+    </form>
+</p>
+
+<p>
+    {% if object_list %}
+    <ul>
+        {% for comic in object_list %}
+
+        <li>
+        {{comic}}
+        <a href={% url 'mostrar_comic' comic.id %}>Mostrar</a>
+        <a href={% url 'editar_comic' comic.id %}>Editar</a>
+        <a href={% url 'eliminar_comic' comic.id %}>Eliminar</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %} 
+    No se encontraron datos.
+    {% endif %}
+</p>
+{% endblock despues_del_header %}

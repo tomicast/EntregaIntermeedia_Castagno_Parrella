@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock title %}
+
+{% block texto_header %}
+<h1>
+    Libros
+</h1>
+{% endblock texto_header %}
+
+{% block despues_del_header %}
+<p>
+    <a href={% url 'listado_libros' %}>Volver</a>
+</p>
+ 
+
+<p>
+   
+    <ul>
+        
+        <li>
+            {{libro.titulo}}
+        </li>
+        <li>
+            {{libro.editorial}}
+        </li>
+        <li>
+            {{libro.anio}}
+        </li>
+        
+    </ul>
+  
+</p>
+{% endblock despues_del_header %} 
