@@ -66,7 +66,7 @@ def eliminar_libro(request, id):
     
     return redirect('listado_libros')
 
-login_required
+@login_required
 def editar_libro(request, id):
     libro = Libro.objects.get(id=id)
     
