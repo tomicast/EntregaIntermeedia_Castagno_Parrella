@@ -1,5 +1,4 @@
 from django.contrib.auth.forms import AuthenticationForm
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as django_login
 from django.contrib.auth.decorators import login_required
@@ -87,7 +86,7 @@ def editar_perfil(request):
         else:
             return render(request, 'accounts/editar_perfil.html', {'form': form})
     
-#     form_libro = FormLibro(initial= {'titulo': libro.titulo , 'editorial': libro.editorial, 'anio': libro.anio})
+
     Form= MyUserEditForm(
         initial={
             'email': user.email,

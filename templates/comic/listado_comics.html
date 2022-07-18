@@ -27,8 +27,7 @@
     <ul>
         {% for comic in object_list %}
 
-        <li>
-        {{comic}}
+        <li>{{comic}}
         <a href={% url 'mostrar_comic' comic.id %}>Mostrar</a>
         <a href={% url 'editar_comic' comic.id %}>Editar</a>
         <a href={% url 'eliminar_comic' comic.id %}>Eliminar</a>
