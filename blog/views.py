@@ -1,12 +1,11 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
-
 from .forms import FormLibro, busquedaLibro
-from .models import Libro
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+from .models import Libro
+
 
 def inicio(request):
     return render(request, 'inicio.html')
@@ -79,7 +78,7 @@ def editar_libro(request, id):
             libro.anio = form.cleaned_data.get('fecha_de_publicación')
             libro.save()
             
-            return redirect('listado_libros') #este es el nombre del path no el url
+            return redirect('listado_libros') 
                     
         else:
             return render(request, 'libro/editar_libro.html', {'form': form, 'libro': libro})

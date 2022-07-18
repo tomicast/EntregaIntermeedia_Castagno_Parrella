@@ -2,8 +2,6 @@
 from django.urls import path
 from .views import inicio, listado_libros, crear_libro, about, eliminar_libro, editar_libro, mostrar_libro
 
-#modelo
-# path('url', vista, nombre=x)
 
 urlpatterns = [
     path('', inicio, name='inicio'),
@@ -16,4 +14,4 @@ urlpatterns = [
     ]
 
     
-    # path('base/', base   ),
+ 

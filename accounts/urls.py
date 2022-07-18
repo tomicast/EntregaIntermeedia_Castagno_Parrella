@@ -2,8 +2,6 @@ from django.urls import path
 from .views import login, register, perfil, editar_perfil
 from django.contrib.auth.views import LogoutView
 
-#modelo
-# path('url', vista, nombre=x)
 
 urlpatterns = [
     path('login/', login, name='login'),
