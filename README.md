@@ -6,8 +6,9 @@ proyecto, una carpeta con los templates y
 una app (blog) que contiene vistas,urls,models y forms.
 
 ## Instalacion
-Para ver versiones ir a "requirements.txt". 
-(antes de iniciar el proyecto cambiar direccion "DIR" en settings.py )  
+Para ver versiones ir a "requirements.txt".  
+(antes de iniciar el proyecto cambiar direccion "DIR" en settings.py )
+  
 ![print](https://user-images.githubusercontent.com/107441449/180026544-caa8cb81-27db-4337-91a6-7caa2199e7fc.jpg)
 
 ## Uso
