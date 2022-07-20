@@ -11,9 +11,7 @@
 {% endblock texto_header %}
 
 {% block despues_del_header %}
-{% comment %} <p>
-    <a href={% url 'login' %}>Volver</a>
-</p> {% endcomment %}
+
 <p>
     <form action={% url 'editar_perfil' %} method="post">
         {% csrf_token %}

@@ -1,11 +1,9 @@
-
 from django.views.generic.list import ListView
 from django.views.generic.edit import DeleteView, CreateView, UpdateView
 from django.views.generic import DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Comic
-#clases basadas en vistas
 
 
 class ListadoComics(ListView):
@@ -21,7 +19,7 @@ class CrearComic(CreateView):
     fields = ['titulo', 'editorial', 'anio']
           
           
-class EditarComic(LoginRequiredMixin, UpdateView): # antes de editar
+class EditarComic(LoginRequiredMixin, UpdateView): 
     model= Comic 
     template_name = 'comic/editar_comic.html'
     success_url = '/appcomic/comics'
@@ -32,6 +30,7 @@ class EliminarComic(LoginRequiredMixin, DeleteView):
     model= Comic 
     template_name = 'comic/eliminar_comic.html' 
     success_url = '/appcomic/comics'
+ 
       
 class MostrarComic(DetailView):
     model= Comic 
