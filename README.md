@@ -7,6 +7,7 @@ una app (blog) que contiene vistas,urls,models y forms.
 
 ## Instalacion
 Para ver versiones ir a "requirements.txt".
+![print](https://user-images.githubusercontent.com/107441449/180026544-caa8cb81-27db-4337-91a6-7caa2199e7fc.jpg)
 
 ## Uso
 La parte superior cuenta con dos botones:  
