@@ -7,6 +7,7 @@ una app (blog) que contiene vistas,urls,models y forms.
 
 ## Instalacion
 Para ver versiones ir a "requirements.txt".
+(antes de iniciar el proyecto cambiar direccion "DIR" en settings.py )  
 
 ## Uso
 La parte superior cuenta con dos botones:  
