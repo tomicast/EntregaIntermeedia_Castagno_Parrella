@@ -12,10 +12,11 @@ def inicio(request):
 
 
 def listado_libros(request):
+    
     nombre_de_busqueda=request.GET.get("titulo")
     
     if nombre_de_busqueda:
-        listado_libros= Libro.objects.filter(nombre__icontains=nombre_de_busqueda) 
+        listado_libros= Libro.objects.filter(titulo__icontains=nombre_de_busqueda) 
          
     else:   
         listado_libros= Libro.objects.all()

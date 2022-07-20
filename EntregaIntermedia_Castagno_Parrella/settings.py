@@ -48,7 +48,7 @@ ROOT_URLCONF = 'EntregaIntermedia_Castagno_Parrella.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r"C:\Users\SolHP\Desktop\Sergito\Cole\descargas GitHub\EntregaIntermeedia_Castagno_Parrella\templates"],
+        'DIRS': [r"C:\Users\SolHP\Desktop\Sergito\Cole\descargas_GitHub\EntregaIntermeedia_Castagno_Parrella\templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
