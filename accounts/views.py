@@ -22,7 +22,6 @@ def login(request):
             
             if user is not None:
                 django_login(request, user)
-                print ('pase por el login')
                 redirect('inicio')
                 
                 return render(request, 'inicio.html', {})
@@ -61,10 +60,10 @@ def perfil(request):
 def editar_perfil(request):
     
     user = request.user
-    mas_datos_usuario, _ = MasDatosUsuarioAvatar.objects.get_or_create(user=user)
+    mas_datos_usuario= MasDatosUsuarioAvatar.objects.get_or_create(user=user)
     
     if request.method == 'POST':
-        form = MyUserEditForm(request.POST, request. FILES)
+        form = MyUserEditForm(request.POST, request.FILES)
         if form.is_valid():
             data = form.cleaned_data
             if data.get('first_name'):
@@ -87,12 +86,12 @@ def editar_perfil(request):
             return render(request, 'accounts/editar_perfil.html', {'form': form})
     
 
-    Form= MyUserEditForm(
+    form= MyUserEditForm(
         initial={
             'email': user.email,
             'first_name': user.first_name,
             'last_name': user.last_name,
-            'avatar': user.avatar
-    }
-    )
+            
+            }
+        )
     return render(request, 'accounts/editar_perfil.html', {'form': form})

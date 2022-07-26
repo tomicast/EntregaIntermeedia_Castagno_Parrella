@@ -14,18 +14,18 @@
 
 <p>
     <ul>
-        <li>Nombre: {{request.user.first_name}} </li>
+        <li>Nombre: </li>
         <li>Apellido: {{request.user.last_name}} </li>
-        <li>Email; {{request.user.email}}  </li>
+        <li>Email: {{request.user.email}} </li>
         <li> <p> Avatar: </p>
             {% if request.user.masdatosusuario.avatar %}
             <img src= {{request.user.masdatosusuario.avatar.url}} alt= "" height= "200px">
             {%endif%}
         </li>
-
+    </ul>    
 </p>
 <p>
-    <a href={% editar_perfil%} > Editar mis datos </a>
-
+   <a href= {% url 'editar_perfil' %} > Editar mis datos </a> 
 </p>
+
 {% endblock despues_del_header %}
