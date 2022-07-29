@@ -60,7 +60,7 @@ def perfil(request):
 def editar_perfil(request):
     
     user = request.user
-    # mas_datos_usuario= MasDatosUsuarioAvatar.objects.get_or_create(user=user)
+    mas_datos_usuario, _ = MasDatosUsuarioAvatar.objects.get_or_create(user=user)
     
     if request.method == 'POST':
         form = MyUserEditForm(request.POST, request.FILES)
@@ -70,20 +70,22 @@ def editar_perfil(request):
                 user.first_name = data.get('first_name')
             if data.get('last_name'):    
                 user.last_name = data.get('last_name')
-                
-            user.email = data.get('email') if data.get('email') else user.email
-            # user.mas_datos_usuario.avatar = data.get('avatar') if data.get('avatar') else mas_datos_usuario.avatar
-            
+            if data.get('avatar'):
+                mas_datos_usuario.avatar = data.get('avatar')
             if data.get('password1') and data.get('password1') == data.get('password2'):
                 user.set_password(data.get('password1'))
-            
-            # user.mas_datos_usuario.save()
+            user.email = data.get('email') if data.get('email') else user.email
+               
+            mas_datos_usuario.save()
             user.save()                     
-            
+                
             return redirect('perfil') 
-                    
         else:
             return render(request, 'accounts/editar_perfil.html', {'form': form})
+            
+            
+            
+                    
     
 
     form= MyUserEditForm(
@@ -91,6 +93,7 @@ def editar_perfil(request):
             'email': user.email,
             'first_name': user.first_name,
             'last_name': user.last_name,
+            'avatar':mas_datos_usuario.avatar
             
             }
         )
