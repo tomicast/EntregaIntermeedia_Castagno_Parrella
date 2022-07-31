@@ -54,9 +54,8 @@ def crear_libro(request):
 
 
 def about(request): 
+    return render (request,"about.html" , {} )
     
-    return HttpResponse ("En esta página es posible ver el listado de todos los libros. Además se podrá cargar nuevos libros y buscar libros")
-
 
 @login_required
 def eliminar_libro(request, id): 

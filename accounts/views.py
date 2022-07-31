@@ -2,6 +2,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as django_login
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import PasswordChangeView
 
 from accounts.models import MasDatosUsuarioAvatar
 from .forms import MyUserCreationForm, MyUserEditForm
@@ -98,3 +99,9 @@ def editar_perfil(request):
             }
         )
     return render(request, 'accounts/editar_perfil.html', {'form': form})
+
+
+class ChangePasswordView(PasswordChangeView):
+    template_name= "accounts/cambio_password.html"
+    success_url= "/accounts/perfil/"
+    
