@@ -3,12 +3,26 @@ from django.views.generic.edit import DeleteView, CreateView, UpdateView
 from django.views.generic import DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+from . forms import BusquedaComic
 from .models import Comic
 
 
 class ListadoComics(ListView):
     model= Comic
     template_name = 'comic/listado_comics.html'
+    
+    def get_queryset(self):
+        titulo= self.request.GET.get("titulo","")
+        if titulo:
+            object_list= self.model.objects.filter(titulo__icontains=titulo)
+        else:
+            object_list=self.model.objects.all()
+        return object_list
+    
+    def get_context_data(self, **kwargs):
+        context=super().get_context_data(**kwargs)
+        context["form"] = BusquedaComic()
+        return context      
 
     
     
