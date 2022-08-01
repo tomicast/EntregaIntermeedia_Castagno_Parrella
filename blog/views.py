@@ -70,7 +70,7 @@ def editar_libro(request, id):
     libro = Libro.objects.get(id=id)
     
     if request.method == 'POST':
-        form = FormLibro(request.POST)
+        form = FormLibro(request.POST )
         
         if form.is_valid():
             libro.titulo = form.cleaned_data.get('titulo')

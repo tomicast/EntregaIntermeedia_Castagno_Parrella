@@ -26,10 +26,11 @@
     {% if listado_libros %}
     <ul>
         {% for libro in listado_libros %}
-        <li>{{libro}}
+        <li>{{libro.titulo}}
         <a href={% url 'editar_libro' libro.id %}>Editar</a>
         <a href={% url 'mostrar_libro' libro.id %}>Mostrar</a>
         <a href={% url 'eliminar_libro' libro.id %}>Eliminar</a>
+        
         </li>
         {% endfor %}
     </ul>

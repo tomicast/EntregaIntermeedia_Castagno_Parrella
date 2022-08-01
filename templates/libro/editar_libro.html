@@ -12,7 +12,7 @@
 
 {% block despues_del_header %}
 <p>
-    <form action={% url 'editar_libro' libro.id %} method="post"> 
+    <form action={% url 'editar_libro' libro.id %} method="post" enctype="multipart/form-data" > 
         {% csrf_token %}
         <table>
             {{form.as_table}}

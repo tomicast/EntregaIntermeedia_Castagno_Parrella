@@ -30,7 +30,7 @@ class CrearComic(CreateView):
     model= Comic 
     template_name = 'comic/crear_comic.html' 
     success_url = '/appcomic/comics'
-    fields = ['titulo', 'editorial', 'anio']
+    fields = ['titulo', 'editorial', 'anio'  ]
           
           
 class EditarComic(LoginRequiredMixin, UpdateView): 

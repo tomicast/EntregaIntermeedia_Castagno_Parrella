@@ -15,7 +15,7 @@
     <a href={% url 'listado_comics' %}>Volver</a>
 </p>
 <p>
-    <form action={% url 'editar_comic' comic.id %} method="post"> 
+    <form action={% url 'editar_comic' comic.id %} method="post" enctype="multipart/form-data" > 
         {% csrf_token %}
         <table>
             {{form.as_table}}

@@ -1,5 +1,12 @@
 ## Entrega Castagno-Parrella
 
+## Integrantes 
+Tomas Castagno  
+Cusa Sergio  
+Thomas Parrella  
+Teveles Ferrari Sebastian  
+
+
 ## Informacion 
 El proyecto se trabajó con un entorno virutal (venv) ignorado en el repositorio (gitignore). Cuenta con una carpeta del 
 proyecto, una carpeta con los templates y
