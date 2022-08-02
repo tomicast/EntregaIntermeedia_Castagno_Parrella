@@ -4,7 +4,7 @@ from .views import inicio, listado_libros, crear_libro, about, eliminar_libro, e
 
 urlpatterns = [
     path('', inicio, name='inicio'),
-    path('listado-libros/', listado_libros, name='listado_libros'),
+    path('libros/', listado_libros, name='listado_libros'),
     path('crear-libro/', crear_libro, name='crear_libro'),
     path ("about/", about, name="about" ),
     path('editar-libro/<int:id>', editar_libro, name='editar_libro'),

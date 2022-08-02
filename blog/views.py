@@ -1,8 +1,8 @@
 from django.shortcuts import redirect, render
-from django.http import HttpResponse
 from .forms import FormLibro, busquedaLibro
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
+
 
 from .models import Libro
 
@@ -27,7 +27,7 @@ def listado_libros(request):
 
 def crear_libro(request):
     if request.method == 'POST':
-        form = FormLibro(request.POST)
+        form = FormLibro(request.POST  )
         
         if form.is_valid():
             data = form.cleaned_data
@@ -39,7 +39,9 @@ def crear_libro(request):
             libro = Libro(
                 titulo=data.get('titulo'),
                 editorial=data.get('editorial'),
-                anio=data.get('anio') if data.get('anio') else datetime.now()                
+                anio=data.get('anio') if data.get('anio') else datetime.now(),
+                
+                
             )
             libro.save()
 
@@ -70,14 +72,13 @@ def editar_libro(request, id):
     libro = Libro.objects.get(id=id)
     
     if request.method == 'POST':
-        form = FormLibro(request.POST )
+        form = FormLibro(request.POST  )
         
         if form.is_valid():
             libro.titulo = form.cleaned_data.get('titulo')
             libro.editorial = form.cleaned_data.get('editorial')
             libro.anio = form.cleaned_data.get('fecha_de_publicación')
-            libro.save()
-            
+           
             return redirect('listado_libros') 
                     
         else:

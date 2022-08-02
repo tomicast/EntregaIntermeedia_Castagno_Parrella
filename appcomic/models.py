@@ -4,6 +4,7 @@ class Comic(models.Model):
     titulo = models.CharField(max_length=30)
     editorial = models.CharField(max_length=30)
     anio = models.DateField(null=True)
+    imagen= models.ImageField(upload_to='comics' , null= True , blank=True)
     
     
     def __str__(self):
