@@ -49,3 +49,4 @@ class EliminarComic(LoginRequiredMixin, DeleteView):
 class MostrarComic(DetailView):
     model= Comic 
     template_name = 'comic/mostrar_comic.html' 
+    
