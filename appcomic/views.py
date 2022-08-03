@@ -29,23 +29,24 @@ class ListadoComics(ListView):
 class CrearComic(CreateView):
     model= Comic 
     template_name = 'comic/crear_comic.html' 
-    success_url = '/appcomic/comics'
+    success_url = '/comics/'
     fields = ['titulo', 'editorial', 'anio' , 'imagen'  ]
           
           
 class EditarComic(LoginRequiredMixin, UpdateView): 
     model= Comic 
     template_name = 'comic/editar_comic.html'
-    success_url = '/appcomic/comics'
+    success_url = '/comics/'
     fields = ['titulo', 'editorial', 'anio' , 'imagen' ]
 
             
 class EliminarComic(LoginRequiredMixin, DeleteView): 
     model= Comic 
     template_name = 'comic/eliminar_comic.html' 
-    success_url = '/appcomic/comics'
+    success_url = '/comics/'
  
       
 class MostrarComic(DetailView):
     model= Comic 
     template_name = 'comic/mostrar_comic.html' 
+    

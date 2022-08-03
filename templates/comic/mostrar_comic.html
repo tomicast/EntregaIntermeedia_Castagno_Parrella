@@ -22,8 +22,10 @@
       <li>
           {{comic}}
     </li> 
+        {% if  comic.imagen %}
+        <img src= {{comic.imagen.url}} alt="" height='200px' >  
+        {% endif %}
         
-      <img src= {{comic.imagen.url}} alt="" height='200px' >  
         
         
     </ul>

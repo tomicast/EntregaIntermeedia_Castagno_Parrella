@@ -16,7 +16,7 @@
 </p>
 
 <p>
-    <form action={% url 'eliminar_comic' object.id %} method="post">
+    <form action={% url 'eliminar_comic' object.id %} method="post" enctype="multipart/form-data" >
         {% csrf_token %}
         ¿Desea eliminar el comic?
         <button>Confirmar</button>
